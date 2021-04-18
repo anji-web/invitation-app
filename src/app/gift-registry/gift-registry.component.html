@@ -1,2 +1,44 @@
-<p>gift-registry works!</p>
-<button class="btn btn-warning" [routerLink]="['/']" routerLinkActive="router-link-active" >Back</button>
+
+<div class="container">
+
+  <div class="form-gift">
+    <form>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <h4>Mandiri     : Viktor Militia Krist </h4>
+              <p> No rekening : 1560013824604 </p>
+              <h4>BCA         : Eka Widya Martha Sari </h4>
+              <p> No rekening : 8980575358 </p>
+              <label for="exampleInputEmail1">Full name</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Fullname">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Phone Number</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+      </div>
+  </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <button class="btn btn-dark" style="margin-left: 30%; margin-top: 50px;" [routerLink]="['/']" routerLinkActive="router-link-active" >Back to home</button>
+</div>
+
+

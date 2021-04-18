@@ -1,8 +1,18 @@
+<form action="">
+ <div class="form-group text-center mt-2">
+    <label for="exampleFormControlSelect1">Select Language : &nbsp; </label>
+    <select class="form-control-sm" id="exampleFormControlSelect1">
+      <option>English</option>
+      <option>Indonesia</option>
+    </select>
+  </div>
+</form>
+
 <div class="title-text">
   <h1>Eka <img class="img-text" src="../../assets/img/EV Icon.png" alt="">Viktor </h1>
 </div>
 
-<div class="container">
+<div class="container" style="margin-top: 2px;">
   <!-- row 1  -->
   <div class="row">
     <div class="col-md-6">
@@ -27,7 +37,9 @@
       <p style="margin-left: 29%;">Click to view our photo</p>
     </div>
     <div class="col-md-6">
-      <img class="img-live2" src="../../assets/img/Icon Gift Registry.png" alt="">
+      <a [routerLink]="['/gift-form']">
+        <img class="img-live2" src="../../assets/img/Icon Gift Registry.png" alt="">
+      </a>
       <p class="p-title-gift"> <b>Gift Registry</b> </p>
       <p style="margin-left: 30%;">Click if you wish to get us a gift</p>
     </div>
@@ -43,7 +55,9 @@
       <p style="margin-left: 25%;">Click if you need help of location</p>
     </div>
     <div class="col-md-6">
+      <a href="{{mapReception}}">
       <img class="img-live2" src="../../assets/img/Icon Maps Reception.png" alt="">
+    </a>
       <p class="p-title2"> <b>Maps Reception</b> </p>
       <p style="margin-left: 30%;">Click if you need help of location</p>
     </div>
@@ -51,6 +65,7 @@
 </div>
 
 <div>
+  <br>
   <p style="text-align: center;">Note : Capture some photos and don't forget to use to help us view all of your wonderful smiles ! </p>
 </div>
 

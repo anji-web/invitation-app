@@ -1,9 +1,11 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../model/User';
+import { Video } from '../model/Video';
 
-const url = "https://jsonplaceholder.typicode.com/"
+
+const url = "http://localhost:8081/"
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,13 @@ const url = "https://jsonplaceholder.typicode.com/"
 export class ActionService {
   constructor(private http: HttpClient) { }
 
-  getDataUser(): Observable<User[]> {
-    return this.http.get<User[]>(url + "users")
+  getVideoById(Id: number): Observable<any>{
+    return this.http.get<any>(url + 'video-api/' + `download/${Id}`, {
+      responseType: 'blob' as 'json'
+    })
+  }
+
+  getListVideo(): Observable<Video[]> {
+    return this.http.get<Video[]>(url+'video-api/'+'list-video')
   }
 }

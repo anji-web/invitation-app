@@ -6,7 +6,7 @@
 
 .title-text {
   display: flex;
-  margin-top: 90px;
+  margin-top: 30px;
   color: #194350;
   justify-content: center;
 }
@@ -62,4 +62,33 @@
 .video-style {
   margin-top: 3%;
   text-align: center;
+}
+
+.btn-class {
+  text-align: center;
+}
+
+.form-gift {
+  margin-top: 18%;
+  margin-left: 30%;
+}
+
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9c9c9c;
+  background-color: #eaeaea;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
+  margin-top: -85px;
 }
