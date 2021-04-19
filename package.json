@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "deploy" : "development -d dist",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -11,7 +10,6 @@
     "e2e": "ng e2e"
   },
   "private": true,
-  "homepage": "https://anji-web.github.io/invitation-app",
   "dependencies": {
     "@angular/animations": "~11.2.7",
     "@angular/common": "~11.2.7",
