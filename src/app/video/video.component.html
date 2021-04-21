@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 style="text-align: center; margin-top: 10%;">Video</h1>
+  <div class="video-style">
+    <div class="row" >
+      <div class="col-md-12"  *ngFor="let c of content | paginate : { currentPage: page,
+        itemsPerPage: 1 }; let i = index">
+        <video width="800" controls autoplay>
+          <source src="{{c.value}}">
+        </video>
+          <h4 style="margin-top: 20px;"> {{c.title}} </h4>
+      </div>
+    </div>
+  </div>
+
+  <pagination-controls (pageChange)="page = $event" style="text-align: center;"></pagination-controls>
+
+  <div class="btn-class">
+    <a [routerLink]="['/']">
+    <button class="btn btn-dark">Back to home</button>
+  </a>
+  </div>
+</div>
+
