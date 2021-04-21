@@ -9,57 +9,27 @@ import { ActionService } from '../service/action.service'
   styleUrls: ['./video.component.css']
 })
 export class VideoComponent implements OnInit {
-  id: number = 1
-  videos: Video[] = []
-  file : any
+  content: Array<any> = new Array()
+  totalLength?: number
+  title: string[] = []
+  page: number = 1
   constructor(private actionService: ActionService) { }
 
   ngOnInit(): void {
-    this.getList()
-    this.getFile()
-  }
-
-  getFile() {
-    this.actionService.getVideoById(this.id).subscribe(
-      data => {
-        this.convertToBase64(data)
+    this.content = [
+      {
+        title: 'Undangan Eka & viktor (English Version)',
+        value: '../../assets/video/Undangan Viktor English.mp4'
+      },
+      {
+        title: 'Undangan Eka & viktor (Indonesian Version)',
+        value: '../../assets/video/Undangan Victor Indo.mp4'
       }
-    )
+    ]
+
+
+    this.totalLength = this.content.length
+    this.title = ["Undangan Viktor", 'small mp4']
+    console.log(this.totalLength)
   }
-
-  convertToBase64(data: File) {
-    const observable = new Observable((subscribe: Subscriber<any>) => {
-      this.readFile(data, subscribe);
-    })
-
-    observable.subscribe(d => {
-      this.file = d
-    })
-
-  }
-
-  readFile(data: File, subscribe: Subscriber<any>) {
-    const fileReader = new FileReader();
-    fileReader.readAsArrayBuffer(data)
-
-    fileReader.onload = () => {
-      subscribe.next(fileReader.result)
-      subscribe.complete()
-    }
-
-    fileReader.onerror = (error) => {
-      subscribe.error(error);
-      subscribe.complete()
-    }
-
-  }
-
-
-  getList() {
-    this.actionService.getListVideo().subscribe(res => {
-      this.videos = res
-      console.log(this.videos)
-    })
-  }
-
 }

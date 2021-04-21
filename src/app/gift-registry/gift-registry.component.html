@@ -11,7 +11,7 @@
               <h4>BCA         : Eka Widya Martha Sari </h4>
               <p> No rekening : 8980575358 </p>
               <label for="exampleInputEmail1">Full name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Fullname">
+              <input type="text" class="form-control" name="name" [(ngModel)] = "formUser.name" aria-describedby="emailHelp" placeholder="Enter Fullname" required ="required" minlength="4">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
           </div>
@@ -20,7 +20,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="exampleInputEmail1">Address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address">
+            <input type="text" class="form-control" [(ngModel)]="formUser.address" name="address" aria-describedby="emailHelp" placeholder="Enter Address" required ="required" minlength="4">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
         </div>
@@ -30,12 +30,12 @@
       <div class="col-md-6">
         <div class="form-group">
           <label for="exampleInputEmail1">Phone Number</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Phone Number">
+          <input type="text" [(ngModel)]="formUser.phoneNumber" name="phoneAddress" class="form-control" aria-describedby="emailHelp" placeholder="Enter Phone Number" required ="required" minlength="12">
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
       </div>
   </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" (click)="onSaveUser()" class="btn btn-primary">Submit</button>
     </form>
   </div>
   <button class="btn btn-dark" style="margin-left: 30%; margin-top: 50px;" [routerLink]="['/']" routerLinkActive="router-link-active" >Back to home</button>

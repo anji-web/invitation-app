@@ -1,8 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import {catchError} from 'rxjs/operators'
 import { User } from '../model/User';
 import { Video } from '../model/Video';
+
 
 
 const url = "http://localhost:8081/"
@@ -22,4 +24,20 @@ export class ActionService {
   getListVideo(): Observable<Video[]> {
     return this.http.get<Video[]>(url+'video-api/'+'list-video')
   }
+
+  addUserGuest(user : User): Observable<Object> {
+    return this.http.post(url + "user-api/" + "add-user-guest", user, { responseType: 'text' }).pipe(catchError(this.handleError))
+  }
+
+  private handleError(err: any) {
+    let errorMessage = ''
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `Error : ${err.error.message}`
+    } else {
+      errorMessage = `Error status code : ${err.status} \n message : ${err.message}`
+    }
+
+    return throwError(errorMessage)
+  }
 }
+

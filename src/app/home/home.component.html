@@ -1,9 +1,8 @@
 <form action="">
  <div class="form-group text-center mt-2">
     <label for="exampleFormControlSelect1">Select Language : &nbsp; </label>
-    <select class="form-control-sm" id="exampleFormControlSelect1">
-      <option>English</option>
-      <option>Indonesia</option>
+    <select #langSelect (change)="changeLang(langSelect.value)" class="form-control-sm" id="exampleFormControlSelect1">
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{lang == 'en' ? 'English' : 'Indonesia'}}</option>
     </select>
   </div>
 </form>
@@ -16,50 +15,54 @@
   <!-- row 1  -->
   <div class="row">
     <div class="col-md-6">
+      <a [routerLink]="['/live']">
       <img class="img-live" src="../../assets/img/Icon Live.png" alt="">
-      <p class="p-title"> <b>Live Streaming</b> </p>
-      <p class="p-content">Click here to witness our matrimony</p>
+    </a>
+      <p class="p-title"> <b>{{'HOME.LIVETITLE' | translate}}</b> </p>
+      <p class="p-content">{{'HOME.LIVECONTENT' | translate}}</p>
     </div>
     <div class="col-md-6">
       <a [routerLink]="['/video']" >
       <img class="img-live2" src="../../assets/img/Icon Video.png" alt="">
     </a>
-      <p class="p-title-video"> <b>Video</b> </p>
-      <p class="p-content">Click on it to see everything what happened</p>
+      <p class="p-title-video"> <b>{{'HOME.VIDEOTITLE' | translate}}</b> </p>
+      <p class="p-content">{{'HOME.VIDEOCONTENT' | translate}}</p>
     </div>
   </div>
 
   <!-- row 2  -->
   <div class="row">
     <div class="col-md-6">
+      <a [routerLink]="['/photo']">
       <img class="img-live" src="../../assets/img/Icon Photo Gallery.png" alt="">
-      <p class="p-title"> <b>Photo Galery</b> </p>
-      <p style="margin-left: 29%;">Click to view our photo</p>
+    </a>
+      <p class="p-title"> <b>{{'HOME.PHOTOTITLE' | translate}}</b> </p>
+      <p style="margin-left: 29%;">{{'HOME.PHOTOCONTENT' | translate}}</p>
     </div>
     <div class="col-md-6">
       <a [routerLink]="['/gift-form']">
         <img class="img-live2" src="../../assets/img/Icon Gift Registry.png" alt="">
       </a>
-      <p class="p-title-gift"> <b>Gift Registry</b> </p>
-      <p style="margin-left: 30%;">Click if you wish to get us a gift</p>
+      <p class="p-title-gift"> <b> {{'HOME.GIFTTITLE' | translate }} </b> </p>
+      <p style="margin-left: 30%;">{{'HOME.GIFTCONTENT' | translate }}</p>
     </div>
   </div>
 
   <!-- row 3 -->
   <div class="row">
     <div class="col-md-6">
-      <a href="{{map}}">
+      <a (click)="moveTabMapHatrimony()">
       <img class="img-live" src="../../assets/img/Icon Maps.png" alt="">
     </a>
-      <p class="p-title-mapsholy"> <b>Maps Holy Matrimony</b> </p>
-      <p style="margin-left: 25%;">Click if you need help of location</p>
+      <p class="p-title-mapsholy"> <b> {{'HOME.MAPHATRIMONYTITLE' | translate}} </b> </p>
+      <p style="margin-left: 25%;">{{'HOME.MAPHATRIMONYCONTENT' | translate}}</p>
     </div>
     <div class="col-md-6">
-      <a href="{{mapReception}}">
+      <a (click)="moveTabMapReception()">
       <img class="img-live2" src="../../assets/img/Icon Maps Reception.png" alt="">
     </a>
-      <p class="p-title2"> <b>Maps Reception</b> </p>
-      <p style="margin-left: 30%;">Click if you need help of location</p>
+      <p class="p-title2"> <b>{{'HOME.MAPTITLE' | translate}} </b> </p>
+      <p style="margin-left: 30%;">{{'HOME.MAPCONTENT' | translate}} </p>
     </div>
   </div>
 </div>
@@ -124,3 +127,7 @@
   <p>Note : Capture some photos</p>
 </div>
  -->
+
+
+
+
